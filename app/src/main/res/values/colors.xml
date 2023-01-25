@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="charcoalDust">#8d8daa</color>
+    <color name="btn_disable_color">#d8d8df</color>
+    <color name="btn_enable_color">#152e64</color>
+
+    <color name="text_enable_color">@color/white</color>
+    <color name="text_disable_color">#8e8e93</color>
+
 </resources>
