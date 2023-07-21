@@ -4,7 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.himawanmasyaid.androidbuttonloading.databinding.ActivityMainBinding
-import com.himawanmasyaid.button_loading.isInternetConnected
+import com.himawanmasyaid.button_loading.InternetConnection
+import com.himawanmasyaid.button_loading.InternetConnection.isInternetConnected
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnSubmit.setOnClickListener {
-            if (isInternetConnected()) {
+            if (InternetConnection.isInternetConnected(this@MainActivity)) {
                 toast("Connected")
             } else {
                 toast("Disconnect")
