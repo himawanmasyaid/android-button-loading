@@ -2,10 +2,32 @@ package com.himawanmasyaid.androidbuttonloading
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.himawanmasyaid.androidbuttonloading.databinding.ActivityMainBinding
+import com.himawanmasyaid.button_loading.isInternetConnected
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding : ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnSubmit.setOnClickListener {
+            if (isInternetConnected()) {
+                toast("Connected")
+            } else {
+                toast("Disconnect")
+            }
+        }
+
     }
+
+    fun toast(message: String) {
+        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
+    }
+
 }
